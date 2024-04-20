@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'student/style.css' %}"> 
+    
+
+    <title>Form</title>
+</head>
+<body>
+    <a class="mr-5 hover:text-teal-900 text-teal-700 font-semibold" href="{% url 'form' %}">Insert</a>
+    <div class="container mt-3">
+        <form enctype="multipart/form-data"method='POST'>
+          {% csrf_token %}
+          <div class="row jumbotron box8">
+            <div class="col-sm-12  mb-4">
+                <h1 class="text-center text-info">XYZ School</h1>        
+                <h2 class="text-center text-info">Student Admmissoin Form</h2>
+                
+            </div>
+           <div class="col-sm-6 form-group">
+              <label for="name-f">Full Name</label>
+              <input type="text" class="form-control" name="name" id="name" placeholder="Type your full name." >
+            </div>
+            <div class="col-sm-6 form-group">
+                <label for="name-f">Father's Name</label>
+                <input type="text" class="form-control" name="father" id="father" placeholder="Type your full name." >
+            </div>
+            <div class="col-sm-6 form-group">
+                <label for="name-f">Mother's Name</label>
+                <input type="text" class="form-control" name="mother" id="mohter" placeholder="Type your full name." >
+              </div>
+    
+           
+            <div class="col-sm-6 form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email." >
+            </div>
+            <div class="col-sm-6 form-group">
+              <label for="tel">Phone</label>
+              <input type="tel" name="phone" class="form-control" id="phone" placeholder="Enter Your Contact Number." >
+            </div>
+            <div class="col-sm-6 form-group">
+              <label for="address">Present Address</label>
+              <input type="address" class="form-control" name="present" id="present" placeholder="House no. Road no. Name, Street no." >
+            </div>
+            
+       
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Upload your Photo</label>
+                <input class="form-control form-control-sm" name="file" id="file" type="file">
+              </div>
+              <div class="col-sm-12 form-group mb-2">
+                <button class="btn btn-primary float-center">Submit</button>
+              </div>
+      
+          </div>
+        </form>
+    </div>
+    
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
